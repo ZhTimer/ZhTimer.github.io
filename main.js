@@ -98,6 +98,7 @@ function reset() {
 
 // Keypress Script
 var pressed = true;
+var e = ""
 document.body.onkeyup = function(e) {
     if(e.keyCode == 32){
       if(pressed) {

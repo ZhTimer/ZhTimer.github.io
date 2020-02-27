@@ -1,6 +1,6 @@
 body {
  font-family: 'Lato', sans-serif;
- font-weight: bold;
+ font-weight: light;
  background-color: white;	
  color: black;
 }
@@ -45,6 +45,8 @@ body {
 
 h1 {
   font-size: 4em;
+  font-weight: normal;
+  font-style: normal;
 }
 
 kbd {
