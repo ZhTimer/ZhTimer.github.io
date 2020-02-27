@@ -83,7 +83,6 @@ function update() {
 function start() {
 	clocktimer = setInterval("update()", 1);
 	x.start();
-  playAudio();
 }
 
 function stop() {
@@ -96,16 +95,7 @@ function reset() {
 	x.reset();
 	update();
 }
-// Play Audio
-var y = document.getElementById("myAudio"); 
 
-function playAudio() { 
-    y.play(); 
-} 
-
-function pauseAudio() { 
-    y.pause(); 
-} 
 // Keypress Script
 var pressed = true;
 document.body.onkeyup = function(e) {
