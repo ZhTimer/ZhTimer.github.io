@@ -83,12 +83,13 @@ function update() {
 
 function start() {
   clocktimer = setInterval("update()", 1);
+  document.querySelector("body").style.backgroundColor = "green"
   x.start();
-  playAudio();
 }
 
 function stop() {
   x.stop();
+  document.querySelector("body").style.backgroundColor = "red"
   clearInterval(clocktimer);
 }
 
