@@ -98,32 +98,24 @@ function reset() {
   x.reset();
   update();
 }
-// Play Audio
-var y = document.getElementById("myAudio");
 
-function playAudio() {
-  y.play();
-}
-
-function pauseAudio() {
-  y.pause();
-}
 // Keypress Script
 var pressed = true;
-document.body.onkeyup = function (e) {
-  if (e.keyCode == 32) {
-    if (pressed) {
-      setTimeout(start, 3000);
-      pressed = false;
-    } else {
-      stop();
-      pressed = true;
-    }
-  }
-  if (e.keyCode == 82) {
+document.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 32) {
+		  if (pressed) {
+        start()
+        pressed = false;
+      } else {
+        stop()
+        pressed = true;
+      }
+     }
+  if (event.keyCode == 82) {
     reset();
   }
-};
+});
 
 function darkmode() {
   var element = document.body;
