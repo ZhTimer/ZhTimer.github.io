@@ -84,6 +84,7 @@ function update() {
 function start() {
   clocktimer = setInterval("update()", 1);
   bghide();
+  document.querySelector("body").style.transition = "background-color 0.5s ease-in"
   document.querySelector("body").style.backgroundColor = "green"
   x.start();
 }
