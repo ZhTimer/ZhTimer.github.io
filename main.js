@@ -99,18 +99,25 @@ function reset() {
   update();
 }
 
-// Keypress Script
+// Keypress Script; Fix this mess shit head
 var pressed = true;
+var solveDone = false;
 document.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 32) {
 		  if (pressed) {
-        start()
-        pressed = false;
-      } else {
-        stop()
-        pressed = true;
+		    if (solveDone == true) {
+		  	   reset();
+		    } 
+		    start();
+          pressed = false;
+        } else {
+          stop()
+          pressed = true;
+		    solveDone = true;
       }
+     } else {
+     	stop();
      }
   if (event.keyCode == 82) {
     reset();  
