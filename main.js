@@ -113,12 +113,20 @@ document.addEventListener("keyup", function(event) {
       }
      }
   if (event.keyCode == 82) {
-    reset();
-  }
+    reset();  
+	}    
 });
 
+var black = true
 function darkmode() {
-  var element = document.body;
-  element.classList.toggle("body");
+	if (black) {
+		var element = document.body;
+		element.classList.toggle("body");
+		black = false;
+	} else {
+		var element = document.body;
+		element.classList.toggle("body");
+		black = true;
+	}
 }
 
