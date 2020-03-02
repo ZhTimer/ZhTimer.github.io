@@ -83,12 +83,14 @@ function update() {
 
 function start() {
   clocktimer = setInterval("update()", 1);
+  bghide();
   document.querySelector("body").style.backgroundColor = "green"
   x.start();
 }
 
 function stop() {
   x.stop();
+  bgshow();
   document.querySelector("body").style.backgroundColor = "red"
   clearInterval(clocktimer);
 }
@@ -137,3 +139,14 @@ function darkmode() {
 	}
 }
 
+function bghide() {
+	document.querySelector("#light").style.visibility = "hidden";
+	document.querySelector("h1").style.visibility = "hidden";
+	document.querySelector("#p").style.visibility = "hidden";
+}
+
+function bgshow() {
+	document.querySelector("#light").style.visibility = "visible";
+	document.querySelector("h1").style.visibility = "visible";
+	document.querySelector("#p").style.visibility = "visible";
+}
