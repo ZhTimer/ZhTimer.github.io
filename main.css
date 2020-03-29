@@ -12,15 +12,14 @@ body {
 }
 
 #light {
-	border: solid 1px grey;
-	font-size: 12px;
+	border: none;
+	margin-left: 2px;
+	background: none;
+	color: white;
+	font-size: 25px;
 	border-radius: 10px;
 	outline: none;
 	position: absolute;
-}
-
-#light:hover {
-	background-color: grey;
 }
 
 .btn {
@@ -60,7 +59,6 @@ kbd {
 .container {
   margin: auto;
   text-align: center;
-  text-height: 1.5;
 }
 
 p {
@@ -71,10 +69,62 @@ img {
   width: 200px;
 }
 
-/*  mobile for small screen */
+#settings {
+	border: 1px solid white;
+	border-radius: 10px;
+	text-align: center;
+	position: fixed;
+	z-index: 1;
+	font-size: 24;
+	color: white;
+	background-color: black;
+	left: 350;
+	width: 674;
+}
+
+#gear {
+	font-size: 25px;
+	margin-left: 35px;
+	background: none;
+	border: none;
+	color: white;
+	outline: none;
+}
+
+.close {
+	outline: none;
+	color: white;
+	border: none;
+	background: none;
+	font-size: 20px;
+	margin: 10px;
+}
+
+h3 {
+	margin: 0;
+	margin-top: 10px;
+}
+
 @media screen and (max-width:420px) {
   img {width:35%}
   #time {font-size: 2.8em;}
   h1{font-size: 2.5em;}
  .btn{padding: 10px 21.33333px;}
+}
+
+.times {
+	width: 250px;
+	height: 250px;
+	border: 1px solid;
+	border-radius: 10px;
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: auto;
+	left: 555px;
+}
+
+.times p {
+	float: left;
+	padding:10px;
+	margin: 0;
 }

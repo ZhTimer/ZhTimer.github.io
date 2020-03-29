@@ -1,20 +1,5 @@
+var amount = 0
 
-//	Simple example of using private variables 
-//	To start the stopwatch:
-//		obj.start();
-//
-//	To get the duration in milliseconds without pausing / resuming:
-//		var	x = obj.time();
-//
-//	To pause the stopwatch:
-//		var	x = obj.stop();	// Result is duration in milliseconds
-//
-//	To resume a paused stopwatch
-//		var	x = obj.start();	// Result is duration in milliseconds
-//
-//	To reset a paused stopwatch
-//		obj.stop();
-//
 var clsStopwatch = function () {
   // Private vars
   var startAt = 0; // Time of last start / resume. (0 if not running)
@@ -24,15 +9,11 @@ var clsStopwatch = function () {
     return new Date().getTime();
   };
 
-  // Public methods
-  // Start or resume
   this.start = function () {
     startAt = startAt ? startAt : now();
   };
 
-  // Stop or pause
   this.stop = function () {
-    // If running, update elapsed time otherwise keep it
     lapTime = startAt ? lapTime + now() - startAt : lapTime;
     startAt = 0; // Paused
   };
@@ -87,17 +68,18 @@ function start() {
   document.querySelector("body").style.transition = "background-color 0.5s ease-in"
   document.querySelector("body").style.backgroundColor = "green"
   x.start();
+  amount = amount + 1;
 }
 
 function stop() {
   x.stop();
   bgshow();
-  document.querySelector("body").style.backgroundColor = "red"
+  document.querySelector("body").style.backgroundColor = "red";
+  timePrint()
   clearInterval(clocktimer);
 }
 
 function reset() {
-  stop();
   x.reset();
   update();
 }
@@ -141,13 +123,33 @@ function darkmode() {
 }
 
 function bghide() {
-	document.querySelector("#light").style.visibility = "hidden";
 	document.querySelector("h1").style.visibility = "hidden";
 	document.querySelector("#p").style.visibility = "hidden";
+	document.querySelector("#light").style.visibility = "hidden";
+	document.querySelector("#gear").style.visibility = "hidden";
 }
 
 function bgshow() {
-	document.querySelector("#light").style.visibility = "visible";
 	document.querySelector("h1").style.visibility = "visible";
 	document.querySelector("#p").style.visibility = "visible";
+	document.querySelector("#light").style.visibility = "visible";
+	document.querySelector("#gear").style.visibility = "visible";
+}
+
+function settings() {
+				var x = document.getElementById("settings");
+				if (x.style.display === "none")
+		{
+				x.style.display = "inline-block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+
+
+function timePrint() {
+	var tag = document.createElement("p");
+	var text = document.createTextNode(amount + ". " + formatTime(x.time()));
+	tag.appendChild(text);
+	document.querySelector('.times').appendChild(tag)
 }

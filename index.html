@@ -6,14 +6,22 @@
 		
 		<link rel="stylesheet" type="text/css" href="main.css">
 	
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 		<script src="main.js"> </script>
 	
 	</head>
 	
 	<body onload="show();" class="body">
 	
-			<button id="light" onclick="darkmode();"> Light Mode </button>
-	
+			<button id="light" onclick="darkmode();"> <i class="fa fa-moon-o"></i> </button>
+			
+			<button id="gear" onclick="settings()">
+
+					<i class="fa fa-gear"></i>
+
+			</button>
+			
 			<div class="container">
 			
 			<h1>ZhTimer</h1>
@@ -34,8 +42,25 @@
 			    
 			  </p>
 			  
+			  <div class="times">
+			  
+			  
+			  
+			  
+			  </div>
+			
 			</div>
 			  
+			</div>
+			  
+			 <div style="display: none;" id="settings">
+
+				<h3> Settings </h3>
+
+				<button onclick="settings()" type="submit" class="close"> <i class="fa fa-window-close"></i> </button>
+
+				<br>
+				
 			</div>
 			
 			</body>
