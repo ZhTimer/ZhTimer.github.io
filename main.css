@@ -127,4 +127,32 @@ h3 {
 	float: left;
 	padding:10px;
 	margin: 0;
+	font-size: 20px;
+}
+
+.stats {
+	width: 250px;
+	height: 250px;
+	border: 1px solid;
+	border-radius: 10px;
+	position: absolute;
+	left: 250px;
+}
+
+.stats p {
+	text-align: left;
+	margin: 0px;
+	padding: 5px;
+}
+
+.timedel {
+	outline: none;
+	color: white;
+	border: none;
+	background: none;
+	font-size: 20px;
+	margin: 10px;
+	position: absolute;
+	top: 0px;
+	right: 10px;
 }

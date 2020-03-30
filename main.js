@@ -49,7 +49,13 @@ function formatTime(time) {
   s = Math.floor(time / 1000);
   ms = time % 1000;
 
-  newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
+  newTime = s + '.' + pad(ms, 3);
+ if (m > 0) {
+  	newTime = m + ':' + pad(s, 2) + "."  + pad(ms, 3);
+	if (h > 0) {
+		newTime = pad(h,2) + ":" + pad(m, 2) + ':' + pad(s, 2) + "."  + pad(ms, 3);
+	}
+  }
   return newTime;
 }
 
@@ -74,8 +80,8 @@ function start() {
 function stop() {
   x.stop();
   bgshow();
-  document.querySelector("body").style.backgroundColor = "red";
   timePrint()
+  document.querySelector("body").style.backgroundColor = "black";
   clearInterval(clocktimer);
 }
 
@@ -101,9 +107,7 @@ document.addEventListener("keyup", function(event) {
           pressed = true;
 		    solveDone = true;
       }
-     } else {
-     	stop();
-     }
+     } 
   if (event.keyCode == 82) {
     reset();  
 	}    
@@ -149,7 +153,15 @@ function settings() {
 
 function timePrint() {
 	var tag = document.createElement("p");
+	tag.classList.add('cubetimes');
 	var text = document.createTextNode(amount + ". " + formatTime(x.time()));
 	tag.appendChild(text);
 	document.querySelector('.times').appendChild(tag)
 }
+
+function removeTimes() {
+	$("p").remove(".cubetimes");
+	amount = 0
+}
+
+

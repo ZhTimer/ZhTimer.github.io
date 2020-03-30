@@ -8,6 +8,8 @@
 	
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 		<script src="main.js"> </script>
 	
 	</head>
@@ -44,8 +46,22 @@
 			  
 			  <div class="times">
 			  
+			  	<h3> Times: </h3>
+			  	
+			  	<button onclick="removeTimes()" type="submit" class="timedel"> <i class="fa fa-window-close"></i> </button>
 			  
 			  
+			  </div>
+			  
+			  <div class="stats">
+			  	
+			  	<h3> Stats: </h3>
+			  
+			  	<p> Ao5: </p> <br>
+			  	<p> Ao12: </p> <br>
+			  	<p> Ao50: </p> <br>
+			  	<p> Ao100: </p> <br>
+			  	<p> Standard Deviation:</p>
 			  
 			  </div>
 			
@@ -53,7 +69,7 @@
 			  
 			</div>
 			  
-			 <div style="display: none;" id="settings">
+			<div style="display: none;" id="settings">
 
 				<h3> Settings </h3>
 
