@@ -154,7 +154,7 @@ function settings() {
 function timePrint() {
 	var tag = document.createElement("p");
 	tag.classList.add('cubetimes');
-	var text = document.createTextNode(amount + ". " + formatTime(x.time()));
+	var text = document.createTextNode(amount + ")  " + formatTime(x.time()));
 	tag.appendChild(text);
 	document.querySelector('.times').appendChild(tag)
 }
